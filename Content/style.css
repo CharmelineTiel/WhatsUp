@@ -1,0 +1,74 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a:hover{
+   text-decoration:none;
+}
+
+/* navbar
+----------------------------------------------------------*/
+.navbar {
+    margin-bottom: 0;
+    border: 0;
+}
+
+#logUit, #login{
+    margin-top:10px;
+}
+/* form
+----------------------------------------------------------*/
+
+.form-control{
+    max-width: 350px;
+}
+.btn a{
+    color: #fff;
+}
+
+/* home
+----------------------------------------------------------*/
+.glyphicon-comment{
+    font-size: 50px;
+    color: #43d854;
+}
+.featured{
+    background: #009688;
+    height: 400px;
+    color: #fff;
+    text-align:center;
+    margin: 0 auto;
+}
+.featured-content{
+    padding-top: 100px;
+    max-width: 500px;
+}
+.featured .btn{
+    margin-top: 25px;
+    border: 0;
+}
+/* footer
+----------------------------------------------------------*/
+footer .float-left,
+footer .float-right {
+   float: none;
+}
+
+footer {
+   text-align: center;
+   height: auto;
+   padding: 10px 0;
+   position:absolute;
+   bottom: 0;
+   width: 100%;
+   background: #F8F8F8;
+   height: 50px;
+   font-size: 11px;
+}
+
+footer p {
+   margin: 0;
+}

@@ -1,0 +1,25 @@
+﻿@using WhatsUp.Models
+@model IEnumerable<WhatsUp.Models.Bericht>
+@{
+    ViewBag.Title = "BekijkAccountChat";
+}
+
+<h2>Berichten</h2>
+
+<fieldset>
+
+    @foreach (Bericht chat in Model)
+    {
+        <div class="display-field">
+            <h4>@Html.DisplayFor(model => chat.OntvangerID)</h4><br />
+            @Html.DisplayFor(model => chat.ChatBericht), @Html.DisplayFor(model => chat.DatumTijd)
+        </div>
+     
+    }
+
+    <div>
+        @Html.ActionLink("Terug", "Index", "Contact")
+    </div>
+
+</fieldset>
+

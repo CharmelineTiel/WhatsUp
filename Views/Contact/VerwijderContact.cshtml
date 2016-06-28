@@ -1,0 +1,26 @@
+﻿@model WhatsUp.Models.Contact
+
+@{
+    ViewBag.Title = "VerwijderContactBevestigen";
+}
+
+
+<h3>Contact verwijderen?</h3>
+<fieldset>
+@using (Html.BeginForm())
+{
+        @Html.AntiForgeryToken()
+
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Naam)
+        </div>
+
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Nummer)
+        </div>
+        <p>
+            <input type="submit" value="Verwijderen" /> |
+            @Html.ActionLink("Terug", "Index")
+        </p>
+    }
+</fieldset>

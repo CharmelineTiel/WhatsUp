@@ -1,0 +1,21 @@
+﻿@model WhatsUp.Models.Contact
+@{
+    ViewBag.Title = "Nieuw contact toevoegen";
+}
+
+<h2>Nieuw contact toevoegen</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Naam)<br/>
+    @Html.TextBoxFor(m => m.Naam)
+    @Html.ValidationMessageFor(m => m.Naam)
+    <br />
+    <br />
+    @Html.LabelFor(m => m.Nummer)<br/>
+    @Html.TextBoxFor(m => m.Nummer)
+    @Html.ValidationMessageFor(m => m.Nummer)  
+    <br />
+    <br />  
+    <input type="submit" value="Toevoegen" />
+}

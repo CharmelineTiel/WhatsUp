@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+@section featured {
+
+    <div class="featured">
+        <div class="featured-content container">
+            <i class="fa fa-whatsapp fa-5x"></i>
+            <h1>@ViewBag.Message</h1>
+            <div class="btn btn-success btn-lg">@Html.ActionLink("Bericht versturen", "Index", "Contact")</div>
+        </div>
+     </div>
+}
+
+
+

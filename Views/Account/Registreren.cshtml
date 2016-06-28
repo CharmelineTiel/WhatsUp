@@ -1,0 +1,54 @@
+﻿@model WhatsUp.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Registreren";
+}
+
+<h2>Registreren</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Account aanmaken</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Naam)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Naam)
+            @Html.ValidationMessageFor(model => model.Naam)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nummer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nummer)
+            @Html.ValidationMessageFor(model => model.Nummer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Wachtwoord)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Wachtwoord)
+            @Html.ValidationMessageFor(model => model.Wachtwoord)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValideerWachtwoord)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValideerWachtwoord)
+            @Html.ValidationMessageFor(model => model.ValideerWachtwoord)
+        </div>
+        <br />
+        <p>
+            <input class="btn btn-primary"  type="submit" value="Registreren" />
+        </p>
+    </fieldset>
+}
+

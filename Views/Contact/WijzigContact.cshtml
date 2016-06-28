@@ -1,0 +1,16 @@
+﻿@model WhatsUp.Models.Contact
+@{
+    ViewBag.Title = "Wijzig contact";
+}
+
+<h2>Wijzig contact</h2>
+
+@using (Html.BeginForm())
+{ 
+    <p>@Html.EditorFor(m => m.Naam)</p> <br/>
+    <p>@Html.EditorFor(m => m.Nummer)</p> <br/>
+    <input type="submit" value="Opslaan" class="btn btn-success" /> 
+   
+}
+
+

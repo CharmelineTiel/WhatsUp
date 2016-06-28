@@ -1,0 +1,33 @@
+﻿@using WhatsUp.Models
+@model IEnumerable<Contact>
+@{
+    ViewBag.Title = "Contacten";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+
+<section class="contact">
+        <ul>
+            @foreach (Contact contact in Model)
+            {
+                <li>
+                   <h4>@Html.ActionLink(@contact.Naam, "BekijkAccountChat", "Chat", new {accountID = contact.ContactAccountID, naam=contact.Naam}, null)</h4>
+                   <p>
+                     @Html.DisplayFor(m => contact.Nummer) 
+                       <br />
+                       <a href="@Url.Action("WijzigContact", "Contact", new { id=contact.ID })">edit&nbsp;<i class="fa fa-pencil"></i>&nbsp;&nbsp;</a>                     
+                       <a href="@Url.Action("VerwijderContact", "Contact", new { id=contact.ID })">delete&nbsp;<i class="fa fa-trash"></i>&nbsp;&nbsp;</a>                                               
+                </p>
+                   <div class="btn btn-sm btn-primary"> @Html.ActionLink("Bericht versturen", "AddChat", "Chat", new { id = contact.ContactAccountID}, null)</div>             
+                </li>
+                <p></p>
+            }
+        </ul>
+        <br /><br />
+        <button type="submit" class="btn btn-success">@Html.ActionLink("Nieuw contact toevoegen", "VoegContactToe")</button>
+</section>
+

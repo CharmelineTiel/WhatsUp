@@ -1,0 +1,24 @@
+﻿@model WhatsUp.Models.Account
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post)) {
+    
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+   
+        @Html.LabelFor(a => a.Naam)<br />
+        @Html.EditorFor(a => a.Naam)<br />
+        @Html.ValidationMessageFor(a => a.Naam)
+        <br /><br />
+        @Html.LabelFor(a => a.Wachtwoord)<br />
+        @Html.EditorFor(a => a.Wachtwoord)<br />
+        @Html.ValidationMessageFor(a => a.Wachtwoord)
+       
+    <br /><br />
+    <input class="btn btn-primary" type="submit" value="Inloggen" />
+}

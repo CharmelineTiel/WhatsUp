@@ -1,0 +1,31 @@
+﻿@model WhatsUp.Models.Bericht
+
+@{
+    ViewBag.Title = "AddChat";
+}
+
+<h2>Bericht versturen</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChatBericht)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChatBericht)
+            @Html.ValidationMessageFor(model => model.ChatBericht)
+        </div>
+        <br/>
+        <p>
+            <input class="btn btn-success" type="submit" value="Versturen" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Terug", "Index", "Contact")
+</div>
